@@ -12,8 +12,8 @@ namespace GenericServiceLocator
 
         public interface IProvideService
         {
-            public void PushService<T>(T service, bool canOverwrite) where T : class;
-            public T PullService<T>(bool createIfNULL) where T : class;
+            public void PushService<T>(T service, bool canOverwrite) where T : class , new();
+            public T PullService<T>(bool createIfNULL) where T : class , new();
             public void ClearService<T>(); 
             public void ClearAllServices();
             public bool PeekService<T>();
@@ -26,9 +26,8 @@ namespace GenericServiceLocator
             public void UnregisterService();
         }
 
-        public abstract class INonMonoService // This class will act as a notifier for Non Mono-Behaviour Services
+        public abstract class INonMonoService  // This class will act as a notifier for Non Mono-Behaviour Services
         {
-            protected INonMonoService() { }
 
         }
 
@@ -47,6 +46,7 @@ namespace GenericServiceLocator
                 if (m_instance == null)
                 {
                     m_instance = new ServiceLocator();
+                    
                 }
                 return m_instance;
             }
@@ -61,6 +61,9 @@ namespace GenericServiceLocator
         {
             i_Instance = this;
             map = new Dictionary<System.Type, object>();
+
+
+            
         }
 
 
@@ -97,7 +100,7 @@ namespace GenericServiceLocator
             }
         }
 
-        public T PullService<T>(bool createIfNULL) where T : class
+        public T PullService<T>(bool createIfNULL) where T : class, new()
         {
             if (this.i_Instance.PeekService<T>())
                 return map[typeof(T)] as T;
@@ -117,7 +120,7 @@ namespace GenericServiceLocator
                 
         }
 
-        public void PushService<T>(T service, bool canOverwrite) where T : class
+        public void PushService<T>(T service, bool canOverwrite) where T : class, new()
         {
             if (service == null)
             {
@@ -154,21 +157,14 @@ namespace GenericServiceLocator
             return obj.GetComponent<T>();
         }
 
-        private T CreateNonMonoInstance<T>(Type t) where T : class
-        {   
-            
+        private T CreateNonMonoInstance<T>(Type t) where T : class , new()
+        {
 
             if (t.IsSubclassOf(typeof(INonMonoService)))
             {
-                System.Reflection.MethodInfo m = t.GetMethod("CreateInstance", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public); // Creating Method Info
-
-                object[] caller = {this.GetType()}; // creating params
-
-                object obj = m.Invoke(null, caller); // Invoking required function
-
-                return obj as T;
+                return new T();
             }
-
+            Debug.LogError($"{typeof(T)} class does not implement INonMonoService interface\n the reference is returned NULL");
             return null;
         }
         #endregion

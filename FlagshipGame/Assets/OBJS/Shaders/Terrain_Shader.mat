@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3465099914714232765
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Terrain_Shader
+  m_Shader: {fileID: -6465566751694194690, guid: e6eee7267ee9dd2438b197ad61d035e8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Dirt_AO:
+        m_Texture: {fileID: 2800000, guid: 0104957301f42ad45b4ce03b4c9b6587, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt_Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt_Road_Normal:
+        m_Texture: {fileID: 2800000, guid: bf26d850bdfaec84fbdf1c4010cfb5aa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt_Road_Texture:
+        m_Texture: {fileID: 2800000, guid: f005f03e215c2f04a96ebd50b561e249, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt_Texture:
+        m_Texture: {fileID: 2800000, guid: b447b925fa31baa40ab9aedcf268a119, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt_Texture_Normal:
+        m_Texture: {fileID: 2800000, guid: c3f46a4f044ce2c4bb5e15cb5b7b0a43, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Grass_AO:
+        m_Texture: {fileID: 2800000, guid: 912f5d50da526ae43b079fed68d2d379, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Grass_Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Grass_Texutre:
+        m_Texture: {fileID: 2800000, guid: 82262fdbdccd4834393c52368d50ce4a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Grass_Texutre_Normal:
+        m_Texture: {fileID: 2800000, guid: 6cc1d73dfa6b6e94697dacc4f1b65594, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Road_AO:
+        m_Texture: {fileID: 2800000, guid: a46e169c4a3450642b27039d34ff9a5d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Road_Mask:
+        m_Texture: {fileID: 2800000, guid: 4b3e19b8bb9999c4e93d5f9a6c6a6948, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_AO:
+        m_Texture: {fileID: 2800000, guid: 6ed388707902d9b4598336e378543252, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Texture:
+        m_Texture: {fileID: 2800000, guid: 82f4cd5c8b1ec1c49a2036eb76d94ffc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock_Texture_Normal:
+        m_Texture: {fileID: 2800000, guid: 7e4c451dd325cbe46bea449c03534764, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Splat_Map:
+        m_Texture: {fileID: 2800000, guid: d20de6948dfe21848ba6000084e716fd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AO_Strength: -4.26
+    - _Brightness_Factor: 2.74
+    - _Dirt_Normal_Strength: 1.18
+    - _Grass_Noise_Scale: 273.99
+    - _Grass_Normal_Strength: 9.1
+    - _Overall_Normal_Strength: 3
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Road_Normal_Strength: 5.9
+    - _Rock_Normal_Strength: 6.8
+    - _Shockwave_Amplitude: 0.1
+    - _Shockwave_Area: 1
+    - _Shockwave_Blend: 0.5
+    - _Shockwave_Speed: 0.5
+    - _Shockwave_Start: 0
+    - _Shokcwave_Density: 1
+    - _StylizedRamp_Offset: 0.69
+    - _StylizedSmoothness: 0.64
+    m_Colors:
+    - _Grass_Base_Color_Variation: {r: 0.14680664, g: 0.89433956, b: 0.19939695, a: 0}
+    - _Grass_Noise_Color: {r: 0.5427841, g: 0.96981126, b: 0.12259876, a: 0}
+    - _RoadColor: {r: 0.8018868, g: 0.7770412, b: 0.71488965, a: 0}
+    - _Shockwave_Origin: {r: 0, g: 0, b: 0, a: 0}
+    - _StylizedTint: {r: 0.2196867, g: 0.3207547, b: 0.23546106, a: 0}
+  m_BuildTextureStacks: []

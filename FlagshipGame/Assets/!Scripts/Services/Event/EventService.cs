@@ -5,28 +5,28 @@ using UnityEngine;
 
 public class EventService : INonMonoService
 {
-    private EventService()
+    public EventService() 
     {
-       
+        OnPlayerDetected = new EventController();
+        OnPlayerUnDetected = new EventController();
+        OnDamagePlayer = new EventController<int>();
+        OnChangeGameState = new EventController<GameState>();
+        OnStartGame = new EventController();
     }
 
 
-    public static EventService CreateInstance(System.Type caller)
-    {
-        if (caller == typeof(ServiceLocator))
-        {
-            return new();
-        }
-        else 
-        {
-            Debug.Log("Instance creation access is forbidden for the type : " +caller);
-            return null;
-        }
-        
-    }
+    #region Events
 
+    public EventController<int> OnDamagePlayer;   // Event for Player recieving damage.
+    public EventController<GameState> OnChangeGameState;
+    
+    public EventController // Used in radial trigger events 
+        OnPlayerDetected,
+        OnPlayerUnDetected;
 
+    public EventController OnStartGame; // Can also be used for restart
 
+    #endregion
 }
 
 
@@ -43,10 +43,10 @@ public class EventController
     public void InvokeEvent() => baseEvent?.Invoke();
 
     public void ClearListeners()
-    {
+    {   
         foreach (var i in baseEvent.GetInvocationList())
         {
-            baseEvent -= i as Action;
+            baseEvent -= (i as Action);
         }
     }
 
@@ -63,7 +63,7 @@ public class EventController<T>
     {
         foreach (var i in baseEvent.GetInvocationList())
         {
-            baseEvent -= i as Action<T>;
+            baseEvent -= (i as Action<T>);
         }
     }
 

@@ -31,8 +31,8 @@ public class InputManager : MonoBehaviour , IMonoService
 
     private void MonitorInput() 
     {   
-        HorizontalInput = Input.GetAxis("Horizontal") * horizontalSens;
-        VerticalInput = Input.GetAxis("Vertical") * verticalSens;
+        HorizontalInput = Input.GetAxis("Horizontal");
+        VerticalInput = Input.GetAxis("Vertical");
     } 
 
     private void OnDisable()
